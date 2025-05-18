@@ -6,8 +6,8 @@ import { Milestone } from 'lucide-react';
 const JourneySection = () => {
   const journeyItems = [
     {
-      year: '2023',
-      title: 'Senior Software Engineer',
+      year: '2013',
+      title: 'Senior Engineer',
       description: 'Leading development of enterprise applications and mentoring junior developers.'
     },
     {
