@@ -29,3 +29,5 @@ const projects: Project[] = [
     link: 'https://example.com/project3'
   }
 ];
+
+export default projects
