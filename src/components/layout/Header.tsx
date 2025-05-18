@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, FileText, Download } from 'lucide-react';
 import Container from '../ui/Container';
 import { NavItem } from '../../types';
 import { useTheme } from '../../context/ThemeContext';
 
 const navItems: NavItem[] = [
   { title: 'Home', href: '#home' },
-  { title: 'About', href: '#about' },
+  { title: 'Bio', href: '#bio' },
+  { title: 'Journey', href: '#journey' },
   { title: 'Projects', href: '#projects' },
+  { title: 'News', href: '#news' },
+  { title: 'Articles', href: '#articles' },
   { title: 'Contact', href: '#contact' },
 ];
 
@@ -27,19 +30,22 @@ const Header: React.FC = () => {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
-    
-    // Smooth scroll to target section
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const handleResumeDownload = () => {
+    // Replace with actual resume download link
+    window.open('/path-to-your-resume.pdf', '_blank');
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white dark:bg-gray-900 shadow-md py-2' 
+          ? 'bg-navy dark:bg-navy-dark shadow-md py-2' 
           : 'bg-transparent py-4'
       }`}
     >
@@ -47,22 +53,21 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className="text-2xl font-bold tracking-tight text-blue-600 dark:text-blue-400"
+            className="text-2xl font-bold tracking-tight text-ferrari dark:text-ferrari-light"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#home');
             }}
           >
-            Portfolio
+            Your Name
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors"
+                className="text-white hover:text-ferrari dark:text-gray-300 dark:hover:text-ferrari-light font-medium transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(item.href);
@@ -71,35 +76,26 @@ const Header: React.FC = () => {
                 {item.title}
               </a>
             ))}
-            <button 
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            <button
+              onClick={handleResumeDownload}
+              className="flex items-center px-4 py-2 bg-ferrari hover:bg-ferrari-dark text-white rounded-md transition-colors"
             >
-              {theme === 'dark' ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-700" />
-              )}
+              <FileText className="w-4 h-4 mr-2" />
+              Resume
             </button>
           </nav>
 
-          {/* Mobile Navigation Toggle */}
           <div className="flex items-center md:hidden">
-            <button 
-              onClick={toggleTheme}
-              className="p-2 mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            <button
+              onClick={handleResumeDownload}
+              className="mr-4 p-2 text-ferrari hover:text-ferrari-light transition-colors"
+              aria-label="Download Resume"
             >
-              {theme === 'dark' ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-700" />
-              )}
+              <FileText className="w-5 h-5" />
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 text-white hover:text-ferrari transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -111,15 +107,14 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg py-4 px-6 animate-slideDown">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-navy dark:bg-navy-dark shadow-lg py-4 px-6 animate-slideDown">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors py-2"
+                  className="text-white hover:text-ferrari dark:text-gray-300 dark:hover:text-ferrari-light font-medium transition-colors py-2"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(item.href);

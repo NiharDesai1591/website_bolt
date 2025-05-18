@@ -15,11 +15,29 @@ export interface Project {
 export interface Skill {
   name: string;
   level: number;
-  category: 'frontend' | 'backend' | 'tools' | 'other';
+  category: 'strategy' | 'leadership' | 'technical' | 'business';
 }
 
 export interface ContactFormData {
   name: string;
   email: string;
   message: string;
+}
+
+export interface NewsArticle {
+  id: string;
+  title: string;
+  source: string;
+  date: string;
+  link: string;
+}
+
+export interface SharedArticle {
+  id: string;
+  title: string;
+  description: string;
+  source: string;
+  date: string;
+  link: string;
+  tags: string[];
 }
