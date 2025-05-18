@@ -38,7 +38,7 @@ const Header: React.FC = () => {
 
   const handleResumeDownload = () => {
     // Replace with actual resume download link
-    window.open('/path-to-your-resume.pdf', '_blank');
+    window.open('https://drive.google.com/file/d/1In1bWqV1YYwDehpjxkWPJ6osyycnLDLx/view?usp=sharing', '_blank');
   };
 
   return (
