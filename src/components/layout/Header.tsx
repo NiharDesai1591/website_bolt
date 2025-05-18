@@ -45,15 +45,15 @@ const Header: React.FC = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-navy dark:bg-navy-dark shadow-md py-2' 
-          : 'bg-transparent py-4'
+          ? 'bg-navy shadow-md py-2' 
+          : 'bg-navy bg-opacity-90 backdrop-blur-sm py-4'
       }`}
     >
       <Container>
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className="text-2xl font-bold tracking-tight text-ferrari dark:text-ferrari-light"
+            className="text-2xl font-bold tracking-tight text-white hover:text-ferrari transition-colors"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#home');
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-white hover:text-ferrari dark:text-gray-300 dark:hover:text-ferrari-light font-medium transition-colors"
+                className="text-white hover:text-ferrari transition-colors font-medium"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(item.href);
@@ -108,13 +108,13 @@ const Header: React.FC = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-navy dark:bg-navy-dark shadow-lg py-4 px-6 animate-slideDown">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-navy shadow-lg py-4 px-6 animate-slideDown">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-white hover:text-ferrari dark:text-gray-300 dark:hover:text-ferrari-light font-medium transition-colors py-2"
+                  className="text-white hover:text-ferrari transition-colors font-medium py-2"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(item.href);
