@@ -6,18 +6,21 @@ import { Milestone } from 'lucide-react';
 const JourneySection = () => {
   const journeyItems = [
     {
-      year: '2013',
-      title: 'Senior Engineer',
+      year: '2023',
+      title: 'Senior Software Engineer',
+      company: 'Google',
       description: 'Leading development of enterprise applications and mentoring junior developers.'
     },
     {
       year: '2021',
       title: 'Full Stack Developer',
+      company: 'Microsoft',
       description: 'Building scalable web applications using modern technologies.'
     },
     {
       year: '2019',
       title: 'Frontend Developer',
+      company: 'Amazon',
       description: 'Creating responsive and accessible user interfaces.'
     }
   ];
@@ -26,7 +29,7 @@ const JourneySection = () => {
     <Section id="journey" className="py-16 bg-gray-50 dark:bg-navy-light">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">My Journey</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">My Journey</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">The path that led me here</p>
         </div>
         
@@ -38,31 +41,20 @@ const JourneySection = () => {
           <div className="space-y-12">
             {journeyItems.map((item, index) => (
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                <div className="w-1/2 pr-8 text-right">
-                  {index % 2 === 0 && (
-                    <>
-                      <h3 className="text-2xl font-bold">{item.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mt-2">{item.description}</p>
-                      <span className="text-primary font-semibold mt-2 block">{item.year}</span>
-                    </>
-                  )}
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p className="text-ferrari font-semibold mt-1">{item.company}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{item.description}</p>
+                  <span className="text-blue-600 dark:text-blue-400 font-semibold mt-2 block">{item.year}</span>
                 </div>
                 
                 <div className="relative flex items-center justify-center">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10">
+                  <div className="w-8 h-8 bg-ferrari rounded-full flex items-center justify-center z-10">
                     <Milestone className="w-4 h-4 text-white" />
                   </div>
                 </div>
                 
-                <div className="w-1/2 pl-8">
-                  {index % 2 !== 0 && (
-                    <>
-                      <h3 className="text-2xl font-bold">{item.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mt-2">{item.description}</p>
-                      <span className="text-primary font-semibold mt-2 block">{item.year}</span>
-                    </>
-                  )}
-                </div>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8 text-right'}`} />
               </div>
             ))}
           </div>

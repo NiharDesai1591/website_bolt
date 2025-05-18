@@ -9,6 +9,7 @@ export interface Project {
   description: string;
   image: string;
   tags: string[];
+  company: string;
   link?: string;
 }
 

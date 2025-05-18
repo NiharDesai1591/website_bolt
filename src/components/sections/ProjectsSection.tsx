@@ -16,7 +16,12 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+          <span className="px-2 py-1 bg-ferrari/10 text-ferrari text-sm font-medium rounded">
+            {project.company}
+          </span>
+        </div>
         <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
@@ -48,11 +53,14 @@ const ProjectsSection: React.FC = () => {
   const [filter, setFilter] = useState<string | null>(null);
 
   const filteredProjects = filter 
-    ? projects.filter(project => project.tags.includes(filter))
+    ? projects.filter(project => project.tags.includes(filter) || project.company === filter)
     : projects;
 
   const uniqueTags = Array.from(
-    new Set(projects.flatMap(project => project.tags))
+    new Set([
+      ...projects.flatMap(project => project.tags),
+      ...projects.map(project => project.company)
+    ])
   );
 
   const handleShowMore = () => {
@@ -79,7 +87,7 @@ const ProjectsSection: React.FC = () => {
           onClick={() => setFilter(null)}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             filter === null
-              ? 'bg-blue-600 text-white'
+              ? 'bg-ferrari text-white'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
           }`}
         >
@@ -91,7 +99,7 @@ const ProjectsSection: React.FC = () => {
             onClick={() => setFilter(tag)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               filter === tag
-                ? 'bg-blue-600 text-white'
+                ? 'bg-ferrari text-white'
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
             }`}
           >
