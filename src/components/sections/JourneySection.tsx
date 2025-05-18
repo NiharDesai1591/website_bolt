@@ -6,22 +6,22 @@ import { Milestone } from 'lucide-react';
 const JourneySection = () => {
   const journeyItems = [
     {
-      year: '2023',
-      title: 'Senior Software Engineer',
-      company: 'Google',
-      description: 'Leading development of enterprise applications and mentoring junior developers.'
+      year: '2023-Present',
+      title: 'Program Lead',
+      company: 'ARTPARK',
+      description: 'Leading the overall strategy, product and program for the Language Modelling verticle of ARTPARK. Key projects include Vaani and HRP Assistant.'
     },
     {
-      year: '2021',
-      title: 'Full Stack Developer',
-      company: 'Microsoft',
-      description: 'Building scalable web applications using modern technologies.'
+      year: '2020-22',
+      title: 'Senior Program Manager',
+      company: 'Ola Electric',
+      description: 'Building 0-1 journey across several functions, starting from Marketing, Central Strategy Office to GTM, with responsibilities across program and product.'
     },
     {
-      year: '2019',
-      title: 'Frontend Developer',
-      company: 'Amazon',
-      description: 'Creating responsive and accessible user interfaces.'
+      year: '2015-19',
+      title: 'Co-Founder',
+      company: 'Gaia Batteries Pvt Ltd',
+      description: 'Setting up the company from scratch and managing the 0-1 journey, focussing on Strategy, operations & technology, FP&A and B2B Sales.'
     }
   ];
 
