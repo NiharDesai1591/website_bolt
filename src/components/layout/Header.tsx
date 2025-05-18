@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Download } from 'lucide-react';
+import { Menu, X, FileText, Sun, Moon } from 'lucide-react';
 import Container from '../ui/Container';
 import { NavItem } from '../../types';
 import { useTheme } from '../../context/ThemeContext';
@@ -83,9 +83,31 @@ const Header: React.FC = () => {
               <FileText className="w-4 h-4 mr-2" />
               Resume
             </button>
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-white hover:text-ferrari transition-colors"
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {theme === 'light' ? (
+                <Moon className="w-5 h-5" />
+              ) : (
+                <Sun className="w-5 h-5" />
+              )}
+            </button>
           </nav>
 
           <div className="flex items-center md:hidden">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-white hover:text-ferrari transition-colors mr-2"
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {theme === 'light' ? (
+                <Moon className="w-5 h-5" />
+              ) : (
+                <Sun className="w-5 h-5" />
+              )}
+            </button>
             <button
               onClick={handleResumeDownload}
               className="mr-4 p-2 text-ferrari hover:text-ferrari-light transition-colors"
