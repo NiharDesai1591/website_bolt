@@ -53,7 +53,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className="text-2xl font-bold tracking-tight text-white hover:text-ferrari transition-colors"
+            className="text-xl font-bold tracking-tight text-white hover:text-ferrari transition-colors"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#home');
