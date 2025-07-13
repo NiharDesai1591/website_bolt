@@ -22,6 +22,12 @@ const JourneySection = () => {
       title: 'Co-Founder',
       company: 'Gaia Batteries Pvt Ltd',
       description: 'Setting up the company from scratch and managing the 0-1 journey, focussing on Strategy, operations & technology, FP&A and B2B Sales.'
+    },
+    {
+      year: '2013-14',
+      title: 'Senior Engineer',
+      company: 'L&T-Heavy Engineering',
+      description: 'Overseeing manufacuturing of large complex pressure vessels for oil & gas and defence industries as a Shopfloor Supervisor. Led the fabrication of one of the largest reactors in India and spearheaded implementation of a new welding technology with hands-on learning and training.'
     }
   ];
 
