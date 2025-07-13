@@ -59,7 +59,7 @@ const Header: React.FC = () => {
               handleNavClick('#home');
             }}
           >
-            Your Name
+            Nihar Desai
           </a>
 
           <nav className="hidden md:flex items-center space-x-6">
