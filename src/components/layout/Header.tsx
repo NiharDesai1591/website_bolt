@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, FileText, Sun, Moon } from 'lucide-react';
 import Container from '../ui/Container';
 import { NavItem } from '../../types';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/themeHooks';
 
 const navItems: NavItem[] = [
   { title: 'Home', href: '#home' },
