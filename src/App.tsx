@@ -17,12 +17,12 @@ function App() {
         <Header />
         <main>
           <HeroSection />
-          <BioSection />
           <JourneySection />
-          <ProjectsSection />
-          <NewsSection />
-          <ArticlesSection />
-          <ContactSection />
+          <BioSection />
+          {/* <ProjectsSection /> */}
+          {/* <NewsSection /> */}
+          {/* <ArticlesSection /> */}
+          {/* <ContactSection /> */}
         </main>
         <Footer />
       </div>

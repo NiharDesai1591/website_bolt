@@ -6,12 +6,8 @@ import { useTheme } from '../../context/ThemeContext';
 
 const navItems: NavItem[] = [
   { title: 'Home', href: '#home' },
-  { title: 'Bio', href: '#bio' },
   { title: 'Journey', href: '#journey' },
-  { title: 'Projects', href: '#projects' },
-  { title: 'News', href: '#news' },
-  { title: 'Articles', href: '#articles' },
-  { title: 'Contact', href: '#contact' },
+  { title: 'Bio', href: '#bio' },
 ];
 
 const Header: React.FC = () => {
@@ -38,7 +34,7 @@ const Header: React.FC = () => {
 
   const handleResumeDownload = () => {
     // Replace with actual resume download link
-    window.open('https://drive.google.com/file/d/1In1bWqV1YYwDehpjxkWPJ6osyycnLDLx/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/15XerVYdCo3qJ_BnImEA9E9Jjixx34OEV/view?usp=drive_link', '_blank');
   };
 
   return (
