@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from '../ui/Section';
-import Container from '../ui/Container';
 import { ExternalLink } from 'lucide-react';
 import type { NewsArticle } from '../../types';
 
