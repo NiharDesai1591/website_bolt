@@ -8,5 +8,12 @@
 
 body {
   margin: 0;
+  background-color: #fff;
+  color: #333;
   min-height: 100vh;
+}
+
+body.dark {
+  background-color: #000;
+  color: #fff;
 }

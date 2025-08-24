@@ -21,35 +21,19 @@ const HeroSection: React.FC = () => {
       
       <Container className="py-20 z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 animate-fadeIn">
-            <span className="block">Hello, I'm </span>
-            <span className="text-blue-600 dark:text-blue-400">Nihar</span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fadeInDelay">
-            A passionate <span className="text-emerald-600 dark:text-emerald-400 font-medium">web developer</span> creating beautiful and functional websites.
+
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fadeInDelay">
+            A hands-on, techno-managerial leader, I thrive on bridging the gap between technology and on-the-ground execution. My unique journey, spanning from manufacturing and MSMEs to modern software engineering and cutting-edge machine learning, gives me a distinct perspective on how to apply technology where it matters most. I am a product-minded executor, passionate about translating high-level strategy into tangible business and social gains in dynamic, high-growth environments.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInDelayLong">
             <Button onClick={scrollToAbout} size="lg">
               Learn More
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Contact Me
-            </Button>
           </div>
         </div>
       </Container>
-      
+                
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <button 
           onClick={scrollToAbout}
