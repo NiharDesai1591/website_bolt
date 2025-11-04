@@ -4,6 +4,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Verdana', 'sans-serif'],
+      },
       colors: {
         navy: {
           DEFAULT: '#0A192F',
